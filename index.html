@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"TEDx|IIT-Bhubaneshwar|2024"</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        let btn = document.getElementsByClassName('navbar-toggler')
+        let menu = document.getElementById('navbarNavDropdown')
+        btn[0].addEventListener("click", () => {
+            if (menu.classList.contains('actived')) {
+                menu.classList.add('deactive');
+                menu.classList.remove('actived')
+                setTimeout(() => {
+                    menu.style.display = 'none'
+                }, 500);
+            } else {
+                menu.style.display = 'block'
+                menu.classList.add('actived');
+                setTimeout(() => {
+                    menu.classList.remove('deactive')
+                }, 200);
+            }
+        });
+    })
+</script>
+
+<body style="height: 100vh;background: black;">
+
+    <nav class="navbar navbar-expand-lg glass-morph navbar-dark"
+        style="display: flex;width: 100vw;background-color: black;padding: 0;">
+        <a class="navbar-brand" href="#" id="main-logo">
+            <img src="./logo.png" height="30" class="d-inline-block align-top" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+            style="justify-self: flex-end;margin: 3.4vw;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class=" navbar-collapse" id="navbarNavDropdown" style="transform-origin: top;">
+            <ul class="navbar-nav" style="justify-content: space-around;position: absolute;background-color: black;">
+                <li class="nav-item"></li>
+                <li class="nav-item">
+                    <a class="navbar-brand" style="font-size: max(1.5vw,1.75vh);" href="./pages/about_us/">
+                        <span color: white">THEME</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" style="font-size: max(1.5vw,1.75vh);" href="#">
+                        <span color: white">ABOUT TEDX</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" style="font-size: max(1.5vw,1.75vh);" href="#">
+                        <span color: white">SPEAKERS</span>
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" style="font-size: max(1.5vw,1.75vh);" href="./pages/competitions/">
+                        <span color: white">REASONS TO ATTEND</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./pages/reach_Us/" class="navbar-brand" style="font-size: max(1.5vw,1.75vh);"
+                        href="./pages/reach_Us/index.html">
+                        <span color: white">ORGANIZERS</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="start">
+        <h3 class="wiss">WISSENAIRE BRINGS YOU</h3>
+        <h1 class="theme">Echoes of Experience: Stories That Shape Us</h1>
+        <button class="btns"> Button
+        </button>
+    </div>
+    <div id="about">
+        <div class="data half">
+            <h1>Echoes of Experience: Stories That Shape Us</h1>
+            <p>nsbvi usrifygea igeibihd bvjhsjvs hfiuwg fibibw ifbaiuh vouwaugg u hw fwouowe owiw o w owo hwohw oi
+                wowohwoh
+                wohvwqoo wffow w of hwo jeipgjeoi ho hoeo e oiissos w hgwoief wwhoiwog w hww piwp owe wo iwfowewoihwo
+                hggr o d oenrnv oihoihoi wjoiw jshoighdjgn'e regighs ;h;l ss s;og ;;ghdghhggr o d oenrnv oihoihoi wjoiw
+                jshoighdjgn'ehggr o d oenrnv oihoihoi wjoiw jshoighdjgn'ehggr o d oenrnv oihoihoi wjoiw
+                jshoighdjgn'ehggr o d oenrnv oihoihoi wjoiw jshoighdjgn'e</p>
+        </div>
+        <img src="./logo.png" alt="" class="half " id="img">
+    </div>
+</body>
+
+</html>
