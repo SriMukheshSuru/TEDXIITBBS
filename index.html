@@ -16,10 +16,10 @@
         btn[0].addEventListener("click", () => {
             if (menu.classList.contains('actived')) {
                 menu.classList.add('deactive');
-                menu.classList.remove('actived')
                 setTimeout(() => {
+                    menu.classList.remove('actived')
                     menu.style.display = 'none'
-                }, 500);
+                }, 200);
             } else {
                 menu.style.display = 'block'
                 menu.classList.add('actived');
@@ -28,13 +28,32 @@
                 }, 200);
             }
         });
+        let bots = document.getElementsByClassName('ted');
+        let first = document.getElementById('first');
+        let second = document.getElementById('second')
+        bots[0].addEventListener("click", () => {
+            first.style.display = "flex"
+                second.style.transform = "scaleX(0)"
+            setTimeout(() => {
+                first.style.transform = "scaleX(1)"
+            }, 100);
+            second.style.display = "none"
+        })
+        bots[1].addEventListener("click", () => {
+            second.style.display = "flex"
+            first.style.transform = "scaleX(0)"
+            setTimeout(() => {
+                second.style.transform = "scaleX(1)"
+            }, 100);
+            first.style.display = "none"
+        })
     })
 </script>
 
 <body style="height: 100vh;background: black;">
 
     <nav class="navbar navbar-expand-lg glass-morph navbar-dark"
-        style="display: flex;width: 100vw;background-color: black;padding: 0;">
+        style="display: flex;width: 100vw;background-color: black;padding: 0;position: fixed;">
         <a class="navbar-brand" href="#" id="main-logo">
             <img src="./logo.png" height="30" class="d-inline-block align-top" alt="" />
         </a>
@@ -46,31 +65,39 @@
         <div class=" navbar-collapse" id="navbarNavDropdown" style="transform-origin: top;">
             <ul class="navbar-nav" style="justify-content: space-around;position: absolute;background-color: black;">
                 <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
                 <li class="nav-item">
                     <a class="navbar-brand" style="font-size: max(1.5vw,1.75vh);" href="./pages/about_us/">
-                        <span color: white">THEME</span>
+                        <span style="color: white">THEME</span>
+                        <span class="title" style="color: white">THEME</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="navbar-brand" style="font-size: max(1.5vw,1.75vh);" href="#">
-                        <span color: white">ABOUT TEDX</span>
+                        <span style="color: white">ABOUT TEDX</span>
+                        <span class="title" style="color: white">ABOUT TEDX</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="navbar-brand" style="font-size: max(1.5vw,1.75vh);" href="#">
-                        <span color: white">SPEAKERS</span>
+                        <span style="color: white">SPEAKERS</span>
+                        <span class="title" style="color: white">SPEAKERS</span>
 
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="navbar-brand" style="font-size: max(1.5vw,1.75vh);" href="./pages/competitions/">
-                        <span color: white">REASONS TO ATTEND</span>
+                        <span style="color: white">REASONS TO ATTEND</span>
+                        <span class="title" style="color: white">REASONS TO ATTEND</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="./pages/reach_Us/" class="navbar-brand" style="font-size: max(1.5vw,1.75vh);"
                         href="./pages/reach_Us/index.html">
-                        <span color: white">ORGANIZERS</span>
+                        <span style="color: white">ORGANIZERS</span>
+                        <span class="title" style="color: white">ORGANIZERS</span>
                     </a>
                 </li>
             </ul>
@@ -83,8 +110,8 @@
         </button>
     </div>
     <div id="about">
-        <div class="data half">
-            <h1>Echoes of Experience: Stories That Shape Us</h1>
+        <div class="data half" style="color: white;">
+            <h1 style="color: red;">Echoes of Experience: Stories That Shape Us</h1>
             <p>nsbvi usrifygea igeibihd bvjhsjvs hfiuwg fibibw ifbaiuh vouwaugg u hw fwouowe owiw o w owo hwohw oi
                 wowohwoh
                 wohvwqoo wffow w of hwo jeipgjeoi ho hoeo e oiissos w hgwoief wwhoiwog w hww piwp owe wo iwfowewoihwo
@@ -93,6 +120,27 @@
                 jshoighdjgn'ehggr o d oenrnv oihoihoi wjoiw jshoighdjgn'e</p>
         </div>
         <img src="./logo.png" alt="" class="half " id="img">
+    </div>
+    <div class="tedx">
+        <div class="buttons">
+            <button class="ted">WHAT IS TED?</button>
+            <button class="ted"> WHAT IS TEDX?</button>
+        </div>
+        <div class="matter" id="first">
+            <img src="./tedx.jpeg" alt="" class="te">
+            <p>nsbvi usrifygea igeibihd bvjhsjvs hfiuwg fibibw ifbaiuh vouwaugg u hw fwouowe owiw o w owo hwohw oi
+                wowohwoh
+                wohvwqoo wffow w of hwo jeipgjeoi ho hoeo e oiissos w hgwoief wwhoiwog w hww piwp owe wo iwfowewoihwo
+                hggr o d oenrnv oihoihoi wjoiw jshoighdjgn'e regighs ;h;l ss s;og ;;ghdghhggr o d oenrnv oihoihoi wjoiw
+                jshoighdjgn'ehggr o d oenrnv oihoihoi wjoiw jshoighdjgn'ehggr o d oenrnv oihoihoi wjoiw
+                jshoighdjgn'ehggr o d oenrnv oihoihoi wjoiw jshoighdjgn'e</p>
+        </div>
+        <div class="matter" id="second">
+            <img src="./tedx.jpeg" alt="" class="ted">
+            <p> bghdjgn'ehggr o d oenrnv oihoihoi wjoiw
+                jshoighdjgn'ehggr o d oenrnv oihoihoi wjoiw jshoighdjgn'eghdjgn'ehggr o d oenrnv oihoihoi wjoiw
+                jshoighdjgn'ehggr o d oenrnv oihoihoi wjoiw jshoighdjgn'e</p>
+        </div>
     </div>
 </body>
 

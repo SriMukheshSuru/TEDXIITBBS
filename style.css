@@ -2,12 +2,34 @@ html {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: "font";
+  src: url("./Montserrat-SemiBold.otf");
+}
+
+@property --a {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+
+@property --b {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 100%;
+}
+
+@property --c {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
 body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "font" !important;
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
 }
@@ -21,25 +43,10 @@ body {
   transition: all 0.2s;
 }
 
-@keyframes actived {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-
-@keyframes deactivate {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
-}
 
 .navbar-nav {
+  transform: scaleY(var(--a)) !important;
+  transform-origin: top;
   @media screen and (max-width: 1000px) {
     width: 100vw;
     margin: 0;
@@ -49,6 +56,33 @@ body {
     margin: 0;
   }
 }
+
+@keyframes actived {
+  from {
+    --a:0%;
+    --b:100%;
+    --c:0%;
+  }
+  to {
+    --a:100%;
+    --b:0%;
+    --c:100%;
+  }
+}
+
+@keyframes deactivate {
+  from {
+    --a:100%;
+    --b:0%;
+    --c:100%;
+  }
+  to {
+    --a:0%;
+    --b:100%;
+    --c:0%;
+  }
+}
+
 .navbar {
   padding: 0;
   @media screen and (min-width: 1000px) {
@@ -56,8 +90,24 @@ body {
   }
 }
 
+span.title {
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  transform-origin: left;
+  transition: transform 0.2s ease;
+  transform: scaleY(0.05) scaleX(0);
+}
+
+a.navbar-brand:hover span.title {
+  transform: scaleY(0.05) scaleX(1);
+}
+
 a.navbar-brand {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .start {
@@ -125,7 +175,7 @@ a.navbar-brand {
 
 #about {
   display: flex;
-  margin-bottom: 15vw; 
+  margin-bottom: 15vw;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 1000px) {
@@ -133,30 +183,87 @@ a.navbar-brand {
   }
 }
 
-.data h1{
-  font-size: max(3.5vh,2.5vw);
+.data h1 {
+  font-size: max(3.5vh, 2.5vw);
 }
-.data p{
-  font-size: max(2.5vh,1.5vw);
+.data p {
+  font-size: max(2.5vh, 1.5vw);
   margin-top: 50px;
   text-align: justify;
 }
-.half{
+.half {
   @media screen and (min-width: 1000px) {
     width: 40vw;
     margin-left: 2.5vw;
     margin-right: 2.5vw;
-    margin-bottom: 5vh; 
+    margin-bottom: 5vh;
     margin-top: 50px;
   }
   @media screen and (max-width: 1000px) {
     width: 80vw;
     margin-left: 10vw;
     margin-right: 10vw;
-    margin-bottom: 5vh; 
+    margin-bottom: 5vh;
     margin-top: 50px;
   }
 }
-img#img{
+img#img {
   height: auto;
+}
+
+.tedx {
+  width: 100vw;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  color: azure;
+  text-align: justify;
+  font-size: max(2vh, 1.4vw);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 80vw;
+  background-color: red;
+  font-size: max(3.5vh,3vw);
+  > button {
+    width: 50%;
+    border: none;
+    border: 2px black solid;
+    background: transparent;
+  }
+}
+
+.tedx img {
+  @media screen and (min-width: 1000px) {
+    width: 40vw;
+    margin-top: 50px;
+  }
+  @media screen and (max-width: 1000px) {
+    width: 80vw;
+    margin-bottom: 5vh;
+    margin-top: 50px;
+  }
+}
+
+.matter{
+  display: flex;
+  @media screen and (max-width:1000px) {
+    flex-direction: column;;
+  }
+  >p{
+    padding: 5% 2%;
+  }
+}
+
+.matter#first{
+  transform: scaleX(1);
+  transition: transform .2s ease;
+}
+
+.matter#second{
+  transform: scaleX(0);
+  display: none;
+  transition: transform .2s ease;
 }
