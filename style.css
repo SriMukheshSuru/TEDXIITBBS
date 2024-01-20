@@ -2,11 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-@font-face {
-  font-family: "font";
-  src: url("./Montserrat-SemiBold.otf");
-}
-
 @property --a {
   syntax: "<percentage>";
   inherits: true;
@@ -29,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "font" !important;
+  font-family: "Montserrat", sans-serif !important;
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
 }
@@ -43,11 +38,24 @@ body {
   transition: all 0.2s;
 }
 
+.full{
+  width: 100%!important;@media screen and (min-width:1000px) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
 
 .navbar-nav {
-  transform: scaleY(var(--a)) !important;
   transform-origin: top;
   @media screen and (max-width: 1000px) {
+    text-align: center;
+    justify-content: center !important;
+    height: 100vh;
+    margin-bottom: 100vh solid black;
+    transform: scaleY(var(--a)) !important;
+    flex-direction: row;
     width: 100vw;
     margin: 0;
   }
@@ -57,45 +65,58 @@ body {
   }
 }
 
+h1.dim{
+  font-size: max(1.5vw,2vh);
+  color: rgb(230, 44, 75);
+}
+
+h1.V{
+  font-size: max(4.5vh,4vw);
+  color: rgb(230, 44, 75);
+  padding: 3vh;
+}
+
 @keyframes actived {
   from {
-    --a:0%;
-    --b:100%;
-    --c:0%;
+    --a: 0%;
+    --b: 100%;
+    --c: 0%;
   }
   to {
-    --a:100%;
-    --b:0%;
-    --c:100%;
+    --a: 100%;
+    --b: 0%;
+    --c: 100%;
   }
 }
 
 @keyframes deactivate {
   from {
-    --a:100%;
-    --b:0%;
-    --c:100%;
+    --a: 100%;
+    --b: 0%;
+    --c: 100%;
   }
   to {
-    --a:0%;
-    --b:100%;
-    --c:0%;
+    --a: 0%;
+    --b: 100%;
+    --c: 0%;
   }
 }
 
 .navbar {
+  z-index: 9999;
   padding: 0;
   @media screen and (min-width: 1000px) {
     height: 10vh;
   }
 }
 
+
 span.title {
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   background-color: white;
-  transform-origin: left;
-  transition: transform 0.2s ease;
+  justify-self: flex-end;
+  transition: transform 0.7s ease;
   transform: scaleY(0.05) scaleX(0);
 }
 
@@ -104,8 +125,9 @@ a.navbar-brand:hover span.title {
 }
 
 a.navbar-brand {
-  padding: 10px;
+  font-size: max(1.5vw,2.75vh);
   display: flex;
+  align-items: center;
   flex-direction: column;
   position: relative;
 }
@@ -184,7 +206,7 @@ a.navbar-brand {
 }
 
 .data h1 {
-  font-size: max(3.5vh, 2.5vw);
+  font-size: max(3vh, 2.5vw);
 }
 .data p {
   font-size: max(2.5vh, 1.5vw);
@@ -226,11 +248,12 @@ img#img {
   justify-content: space-around;
   width: 80vw;
   background-color: red;
-  font-size: max(3.5vh,3vw);
+  font-size: max(3.5vh, 3vw);
+  border: 0;
   > button {
     width: 50%;
     border: none;
-    border: 2px black solid;
+    border: 2px white solid;
     background: transparent;
   }
 }
@@ -247,23 +270,182 @@ img#img {
   }
 }
 
-.matter{
+.matter {
   display: flex;
-  @media screen and (max-width:1000px) {
-    flex-direction: column;;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
   }
-  >p{
+  > p {
     padding: 5% 2%;
   }
 }
 
-.matter#first{
+.matter#first {
   transform: scaleX(1);
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
 }
 
-.matter#second{
+.matter#second {
   transform: scaleX(0);
   display: none;
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
+}
+h1 {
+  color: white;
+  font-size: 18px;
+  font-weight: bolder;
+  letter-spacing: 1.5px;
+}
+
+p,
+p1 {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+}
+
+p {
+  color: #aaa;
+}
+
+p1 {
+  color: #e62b4a;
+}
+
+.reason {
+  margin: 60px 0;
+  text-align: center;
+
+  > h1 {
+    font-size: max(4vw, 50px);
+    margin-bottom: 50px;
+  }
+  > .rs-cards {
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    > .rss {
+      border-style: solid;
+      border-width: 2px;
+      border-color: #aaaaaa86;
+      background: transparent;
+      margin-top: 10px;
+
+      > img {
+        margin-top: 50px;
+        width: 100%;
+      }
+
+      > p {
+        font-size: large;
+        margin-top: 15px;
+        padding: 10px 30px;
+      }
+    }
+  }
+}
+.contact {
+  background-color: black;
+  width: 100%;
+  margin-top: 80px;
+
+  > .cont {
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+
+    > .one {
+      margin-top: 50px;
+
+      > img {
+        padding-bottom: 40px;
+      }
+      > p,
+      p1 {
+        padding-bottom: 5px;
+      }
+    }
+
+    > .second {
+      margin-top: 50px;
+
+      > h1 {
+        padding-bottom: 40px;
+      }
+      > p {
+        padding-bottom: 5px;
+      }
+    }
+
+    > .third {
+      margin-top: 50px;
+
+      > h1 {
+        padding-bottom: 40px;
+      }
+      > p {
+        padding-bottom: 5px;
+      }
+    }
+  }
+
+  > .footer {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+
+    > hr {
+      width: 70%;
+      margin-bottom: 15px;
+    }
+
+    > p {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+@media (width > 740px) {
+  .cont {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .rs-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .rss {
+      width: 200px;
+      height: 250px;
+    }
+  }
+}
+
+@media (width <= 740px) {
+  .reason {
+    padding: 0 5%;
+  }
+  .rs-cards {
+    display: flex;
+    flex-direction: column;
+
+    > .rss {
+      width: 80%;
+
+      > p {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .cont {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+  }
 }
